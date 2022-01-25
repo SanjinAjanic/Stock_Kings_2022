@@ -1,0 +1,20 @@
+﻿@page
+@model IndexModel
+@using Stock_Kings.Model;
+@inject AuthDBContext ctx;
+@{
+    ViewData["Title"] = "Home page";   }
+
+<div class="text-center"> 
+    <ol>
+      @foreach(var stock in ctx.getStockList())  {
+        <li>@stock.Email @stock.StockName @(stock.StockPrice+"$")</li>
+        
+    
+          
+      }
+
+    </ol>
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
