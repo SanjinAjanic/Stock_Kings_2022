@@ -28,7 +28,8 @@ public class AuthDBContext: IdentityDbContext
         /// <returns></returns>
         public List<StockListItem> getStockList()
         {
-          return  Stocks.Join(UserStocks, stock => stock.Id, userStock => userStock.StockId, (stock,  userStock ) => new StockListItem {Email = userStock.Email, StockName = stock.Name, StockPrice = stock.Price }).ToList();
+            return Stocks.Select(stock => new StockListItem { StockName = stock.Name, StockPrice = stock.Price }).ToList();
+            // return  Stocks.Join(UserStocks, stock => stock.Id, userStock => userStock.StockId, (stock,  userStock ) => new StockListItem {Email = userStock.Email, StockName = stock.Name, StockPrice = stock.Price }).ToList();
         } 
     }
 }
