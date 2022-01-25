@@ -3,12 +3,15 @@
 @using Stock_Kings.Model;
 @inject AuthDBContext ctx;
 @{
-    ViewData["Title"] = "Home page";   }
+    ViewData["Title"] = "Home page";
+   
+}
 
 <div class="text-center"> 
     <ol>
       @foreach(var stock in ctx.getStockList())  {
         <li>@stock.Email @stock.StockName @(stock.StockPrice+"$")</li>
+
         
     
           
