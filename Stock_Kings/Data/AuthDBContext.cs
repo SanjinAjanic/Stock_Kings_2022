@@ -22,14 +22,7 @@ public class AuthDBContext: IdentityDbContext
         }
         public DbSet<StockModel> Stocks { get; set; }
         public DbSet<UserStockModel> UserStocks { get; set; }
-        /// <summary>
-        /// Skapat en querry som joinar stocks och userstocks.
-        /// </summary>
-        /// <returns></returns>
-        public List<StockListItem> getStockList()
-        {
-            return Stocks.Select(stock => new StockListItem { StockName = stock.Name, StockPrice = stock.Price }).ToList();
-            // return  Stocks.Join(UserStocks, stock => stock.Id, userStock => userStock.StockId, (stock,  userStock ) => new StockListItem {Email = userStock.Email, StockName = stock.Name, StockPrice = stock.Price }).ToList();
-        } 
+        public DbSet<UserFavStock> UserFavStocks { get; set; }
+
     }
 }

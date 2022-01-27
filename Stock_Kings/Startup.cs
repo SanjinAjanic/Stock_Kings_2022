@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Stock_Kings.Model;
+using Stock_Kings.Services.Interfaces;
+using Stock_Kings.Services;
 
 namespace Stock_Kings
 {
@@ -29,6 +31,7 @@ namespace Stock_Kings
             services.AddRazorPages();
             services.AddDbContext<AuthDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AuthConnectionString")));
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AuthDBContext>();
+            services.AddTransient<IStocksRepo, StocksRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

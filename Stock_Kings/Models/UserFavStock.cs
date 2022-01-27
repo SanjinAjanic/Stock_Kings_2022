@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Stock_Kings.Models
 {
-    public class UserStockModel
+    public class UserFavStock
     {
         [Required]
         [Key]
@@ -20,6 +20,5 @@ namespace Stock_Kings.Models
 
 
         public bool IsFavourite { get; set; }
-
     }
 }
