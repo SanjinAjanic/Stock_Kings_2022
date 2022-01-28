@@ -9,15 +9,15 @@ namespace Stock_Kings.Services.Interfaces
     /// <summary>
     /// skapar interface av stockrepo.
     /// </summary>
-    public interface IStocksRepo
+    public interface IUserStockRepo
     {
-        void Add(StockModel stock);
-        void Delete(StockModel stock);
-        void Update(StockModel stock);
+        void Add(UserStockModel stock);
+        void Delete(UserStockModel stock);
+        void Update(UserStockModel stock);
 
-        StockModel GetById(int id);
+        UserStockModel GetById(int id);
 
-        IEnumerable<StockModel> GetAll();
+        IEnumerable<UserStockModel> GetAll();
 
 
 

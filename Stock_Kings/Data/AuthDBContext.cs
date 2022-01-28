@@ -21,8 +21,8 @@ public class AuthDBContext: IdentityDbContext
     
         }
         public DbSet<StockModel> Stocks { get; set; }
-        public DbSet<UserStockModel> UserStocks { get; set; }
-        public DbSet<UserFavStock> UserFavStocks { get; set; }
+        public DbSet<UserStockModel> UserStocksR { get; set; }
+      
 
     }
 }

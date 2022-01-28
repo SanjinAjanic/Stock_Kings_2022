@@ -9,16 +9,9 @@ namespace Stock_Kings.Models
 {
     public class UserStockModel
     {
-        [Required]
-        [Key]
-        [ForeignKey("StockModel")]
-        public int StockId { get; set; }
-
-        [Required]
-        [ForeignKey("Login")]
-        public string Email { get; set; }
-
-
+        public int Id { get; set; }
+        public int? StockId { get; set; }
+        public string? Email { get; set; }
         public bool IsFavourite { get; set; }
 
     }
