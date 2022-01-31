@@ -10,8 +10,8 @@ using Stock_Kings.Model;
 namespace Stock_Kings.Migrations
 {
     [DbContext(typeof(AuthDBContext))]
-    [Migration("20220128190212_UserStocksToUserStocksR")]
-    partial class UserStocksToUserStocksR
+    [Migration("20220131161829_test")]
+    partial class test
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

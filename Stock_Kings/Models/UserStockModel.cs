@@ -9,9 +9,11 @@ namespace Stock_Kings.Models
 {
     public class UserStockModel
     {
+
+       
         public int Id { get; set; }
         public int? StockId { get; set; }
-        public string? Email { get; set; }
+        public string Email { get; set; }
         public bool IsFavourite { get; set; }
 
     }
