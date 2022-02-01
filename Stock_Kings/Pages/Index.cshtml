@@ -9,11 +9,13 @@
    
 }
 
+
+
 <div class="text-center"> 
     count of stocks: @stocks.Count()
     <ol>
         @foreach(var stock in stocks)  {
-        <li> @stock.Name @(stock.Price+"$") <a asp-page="/SaveStock" asp-route-id="@stock.Id">Save Stock</a></li>
+        <li> @stock.Name @(stock.Price+"$") <a asp-page="/SaveStock" asp-route-id="@stock.Id">Add Stock</a></li>
         
         
 
