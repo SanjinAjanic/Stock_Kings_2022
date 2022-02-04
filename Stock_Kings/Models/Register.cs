@@ -4,20 +4,23 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Stock_Kings.ViewModels
+namespace Stock_Kings.Models
 {
-    public class Login
+    public class Register
     {
-        [Key]
+        
         [Required]
         [DataType(DataType.EmailAddress)]
-        
-        public string Email { get; set; }
+        public  string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        public bool RememberMe { get; set; }
+        [Required]
+        [DataType(DataType.Password)]
+        [Compare(nameof(Password), ErrorMessage = "Password did not match" )]
+        public string ConfirmPassword { get; set; }
+
     }
 }

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Stock_Kings.ViewModels;
+using Stock_Kings.Models;
 
 namespace Stock_Kings.Pages
 {

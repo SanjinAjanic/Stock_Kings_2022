@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Stock_Kings.Models;
-using Stock_Kings.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
