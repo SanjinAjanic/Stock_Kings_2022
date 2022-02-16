@@ -2,28 +2,34 @@
 @using Stock_Kings.Services.Interfaces
 @model IndexModel
 @using Stock_Kings.Model;
-@inject IStocksRepo stocksRepo 
+@inject IStocksRepo stocksRepo
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
 @{
     ViewData["Title"] = "Home page";
     var stocks = stocksRepo.GetAll();
-   
+
 }
 
 
+@if (SignInManager.IsSignedIn(User))
+{
 
-<div class="text-center"> 
-    count of stocks: @stocks.Count()
-    <ol>
-        @foreach(var stock in stocks)  {
-        <li> @stock.Name @(stock.Price+"$") <a asp-page="/SaveStock" asp-route-id="@stock.Id">Add Stock</a></li>
+    <div class="text-center">
         
+        <ol>
+            @foreach (var stock in stocks)
+            {
+                <li> @stock.Name @(stock.Price+"$") <a asp-page="/SaveStock" asp-route-id="@stock.Id">Add Stock</a></li>
+
+
+
+
+
+
+            }
+
+        </ol>
         
-
-
-
-
-      }
-
-    </ol>
-    @User
-</div>
+    </div>
+}
